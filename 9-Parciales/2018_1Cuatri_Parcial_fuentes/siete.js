@@ -13,21 +13,23 @@ var V6 = 0;
 
     for (i = 1; i < 6; i++ )
     {
+        nota = parseInt(prompt ("Ingrese nota entre 0/10: "));
 
-        nota = parseInt(prompt ("Ingrese nota: "));
-
-        while (nota < 0 || nota > 10)
+        //while (nota < 0 || nota > 10 || isNan(nota))
+        while (!(nota >= 0 && nota <= 10))
         {
-        alert("No es una nota valida");
-        nota = parseInt(prompt("Reingrese nota: "));
+        alert("No ingresó una nota valida");
+        nota = parseInt(prompt("Reingrese la nota: "));
         }
 
-        sexo = prompt("Ingrese sexo: f o m");
-
-        while (sexo != "f" && sexo != "m")
+        sexo = prompt("Ingrese sexo:").toLowerCase();
+        
+        //while (sexo != "f" && sexo != "m")
+        //while (! (sexo =="f" || sexo == "m" || sexo == "M" || sexo== "F")
+        while (!(sexo == "f" || sexo == "m"))
         {
              alert ("No es un sexo valido");
-            sexo = prompt("Reeingrese sexo: f o m");
+            sexo = prompt("Reeingrese el sexo:").toLowerCase();
         }
 
         if (nota < notaBaja || flag == 0)
@@ -43,11 +45,11 @@ var V6 = 0;
             V6++;
         }
 
-    acumulador = nota + acumulador;
+        acumulador = nota + acumulador;
     }
 
     promedio = acumulador / 5;
 
-    alert(" El promedio es: " + promedio + "\n La nota mas baja es: " + notaBaja + "\n Su sexo es: " + sexoBajo + "\n Los varones cuya nota es mayor a 5: " + V6);
+    alert(" El promedio es: " + promedio + "\n La nota mas baja es: " + notaBaja + " y es de sexo: " + sexoBajo + "\n Los varones cuya nota es mayor a 5: " + V6);
 }
 
