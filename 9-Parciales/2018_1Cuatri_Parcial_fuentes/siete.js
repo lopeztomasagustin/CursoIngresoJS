@@ -8,7 +8,7 @@ var acumulador = 0;
 var notaBaja;
 var sexoBajo;
 var flag = 0;
-var V6 = 0;
+var contador = 0;
 
 
     for (i = 1; i < 6; i++ )
@@ -31,7 +31,7 @@ var V6 = 0;
              alert ("No es un sexo valido");
             sexo = prompt("Reeingrese el sexo:").toLowerCase();
         }
-
+        //if(nota < notaBaja || i==0) sin usar Flag.
         if (nota < notaBaja || flag == 0)
              {
             notaBaja = nota;
@@ -39,10 +39,10 @@ var V6 = 0;
             flag = 1;
 
             }
-
+        
         if (sexo == "m" && nota >= 6)
         {
-            V6++;
+            contador++;
         }
 
         acumulador = nota + acumulador;
@@ -50,6 +50,8 @@ var V6 = 0;
 
     promedio = acumulador / 5;
 
-    alert(" El promedio es: " + promedio + "\n La nota mas baja es: " + notaBaja + " y es de sexo: " + sexoBajo + "\n Los varones cuya nota es mayor a 5: " + V6);
+    
+    document.write(" El promedio es: " + promedio + "<br>" +  "La nota mas baja es: " + notaBaja + " y es de sexo: " + sexoBajo + "<br>" + "Los varones cuya nota es mayor a 6: " + contador);
+    //alert(" El promedio es: " + promedio + "\n La nota mas baja es: " + notaBaja + " y es de sexo: " + sexoBajo + "\n Los varones cuya nota es mayor a 5: " + V6);
 }
 
